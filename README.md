@@ -10,7 +10,6 @@ Basic shell concepts
        - Exploring the System
        - Manipulating Files and Directories
        - Working with Commands
-       - Wildcards
        - Symbolic Links
        - Expansion
        - Text Editors (`vi`, `vim` and `emacs`)
