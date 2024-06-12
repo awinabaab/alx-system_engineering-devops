@@ -3,13 +3,12 @@
   - The `bash` scripts demonstrate my knowledge and understanding of the use `bash`.
 
 ## 0x00-shell_basics/
-Basic shell concepts
-   ### Concepts Covered
-       - What is Shell?
-       - Navigation
-       - Exploring the System
-       - Manipulating Files and Directories
-       - Working with Commands
-       - Symbolic Links
-       - Expansion
-       - Text Editors (`vi`, `vim` and `emacs`)
+   Basic shell concepts. Concepts covered include:
+   - What is Shell?
+   - Navigation
+   - Exploring the System
+   - Manipulating Files and Directories
+   - Working with Commands
+   - Symbolic Links
+   - Expansion
+   - Text Editors (`vi`, `vim` and `emacs`)
