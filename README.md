@@ -4,6 +4,7 @@
 
 ## 0x00-shell_basics
    ### Concepts Covered
+   ---
        - What is Shell?
        - Navigation.
        - Exploring the System.
