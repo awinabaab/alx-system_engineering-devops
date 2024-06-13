@@ -12,3 +12,4 @@
    - Symbolic Links
    - Expansion
    - Text Editors (`vi`, `vim` and `emacs`)
+   - Magic Files
