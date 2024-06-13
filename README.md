@@ -13,3 +13,8 @@
    - Expansion
    - Text Editors (`vi`, `vim` and `emacs`)
    - Magic Files
+
+## 0x01-shell_permissions
+   Shell file ownership and permissions. Concepts covered include:
+   - File ownership
+   - File permissions
