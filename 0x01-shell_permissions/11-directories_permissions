@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod ogu+x --preserve-root .
+chmod ugo+x --preserve-root ./*/
