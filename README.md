@@ -21,7 +21,17 @@
    - File permissions
 
 ## 0x02-shell_redirections/
-   Shell I/O redirections. Concepts covered include:
+   Shell, I/O redirections and filters. Concepts covered include:
    - Shell I/O redirections
    - Special characters
    - Regular expressions
+   - Filters
+
+## 0x03-shell_variables_expansions/
+   Shell, init file, variables and expansions. Concepts covered include:
+   - Expansions
+   - Shell Arithmetic
+   - Variables
+   - Shell initialization files
+   - The alias command
+
