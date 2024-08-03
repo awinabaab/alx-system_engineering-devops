@@ -26,7 +26,7 @@
    - How to create a group
    - How to print real and effective user and group IDs
    - How to print the groups a user is in
-   - How to print the effective userid
+   - How to print the effective `userid`
 
 ## [0x02-shell_redirections/](https://github.com/awinabaab/alx-system_engineering-devops/tree/master/0x02-shell_redirections)
    - What do the commands `head`, `tail`, `find`, `wc`, `sort`, `uniq`, `grep`, `tr` do
