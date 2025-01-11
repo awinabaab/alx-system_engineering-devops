@@ -1,0 +1,5 @@
+# Configuration to connect to a server without typing a password
+# Identity file ~/.ssh/school
+Host *
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
