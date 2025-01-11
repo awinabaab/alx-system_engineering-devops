@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 # Creates an RSA key pair
 # Name: school
 # Passphrase: betty
