@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Configure your Nginx server so that /redirect_me is redirecting to another page
+
+apt-get -y update
+apt-get -y install nginx
+
+echo "Hello World!" > /var/www/html/index.html
+service nginx start
+
+# Backup existing nginx config file
+NGINX_CONFIG_FILE="/etc/nginx/sites-available/default"
+cp "$NGINX_CONFIG_FILE" "$NGINX_CONFIG_FILE".bak
+
+# Configure /redirect_me path
+CONFIG_STRING="server_name _;\n\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/github.com\/awinabaab?tab=repositories;\n\t}"
+sed -i "s/server_name _;/$CONFIG_STRING/" "$NGINX_CONFIG_FILE"
+
+nginx -t
+exit_code=$?
+
+if (( exit_code == 0 ))
+then
+	service nginx restart
+fi
