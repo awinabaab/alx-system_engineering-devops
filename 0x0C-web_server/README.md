@@ -32,3 +32,9 @@
    - A bash script that	configures an `nginx` web server so that `/redirect_me`	is
    redirecting to another page. The reidrection will be a `301 Moved Permanently`
    - And a custom 404 page that contains the string `Ceci n'est pas une page`
+
+## [7-puppet_install_nginx_web_server.pp](https://github.com/awinabaab/alx-system_engineering-devops/blob/master/0x0C-web_server/7-puppet_install_nginx_web_server)
+   A puppet manifest to cofigure an `nginx` web server
+   - Nginx should be listening on port 80
+   - When querying Nginx at its root / with a GET request (requesting a page) using curl, it must return a page that contains the string Hello World!
+   - The path `/redirect_me` redirection must be a “301 Moved Permanently”
