@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy
+# Send traffic to two servers
+# Distributes requests using a roundrobin alogorithm
+# Must be run with sudo privileges
+
+##
+# Enable a dedicated ppa and install haproxy
+##
+apt-get update -y
+apt-get install -y haproxy
+
+CONFIG_PATH='/etc/haproxy/haproxy.cfg'
+INIT_PATH='/etc/default/haproxy'
+
+FRONTEND_CONFIG="\nfrontend web-frontend\n\tbind *:80\n\tdefault_backend web-backend"
+SERVER_01="806476-web-01"
+SERVER_01_IP="100.26.158.187:80"
+SERVER_02="806476-web-02"
+SERVER_02_IP="34.204.60.177:80"
+BACKEND_CONFIG="backend web-backend\n\tbalance roundrobin\n\tserver $SERVER_01 $SERVER_01_IP check\n\tserver $SERVER_02 $SERVER_02_IP check"
+
+##
+# Make sure that HAproxy can be managed via an init script
+##
+echo "ENABLED=1" | tee -a "$INIT_PATH"
+
+##
+# Backup the existing haproxy config file and append new directives
+##
+cp "$CONFIG_PATH" "$CONFIG_PATH".bak
+echo -e "$FRONTEND_CONFIG\n\n$BACKEND_CONFIG" | sudo tee -a "$CONFIG_PATH"
+
+##
+# Check if config file is valid: restart haproxy if true
+##
+haproxy -c -f "$CONFIG_PATH"
+exit_code=$?
+
+if (( exit_code == 0 )); then
+	service haproxy restart
+fi
