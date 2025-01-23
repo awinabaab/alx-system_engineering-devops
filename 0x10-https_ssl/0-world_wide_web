@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Outputs the datails of a domain
+
+domain=$1
+subdomain=$2
+
+dig_domains () {
+	details=$(dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION' | cut -d ":" -f 2)
+	echo "$details" | awk -v subdomain="$subdomain" '{ if (NF > 0) print "The subdomain "subdomain" is a "$4" record and points to "$5  }'
+	return 0
+}
+
+if [ ! "$subdomain" ]; then
+	domains=('www' 'lb-01' 'web-01' 'web-02')
+	for subdomain in "${domains[@]}"
+	do
+		dig_domains "$domain" "$subdomain"
+	done
+elif [ "$subdomain" ]; then
+	dig_domains "$domain" "$subdomain"
+fi
