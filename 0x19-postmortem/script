@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+sudo apt install apache2 -y
+
+if sudo apache2ctl configtest; then
+	sudo service apache2 start
+fi
+
+ps aux | grep "apache1"
+sudo netstat -lpdn | grep "apache2"
