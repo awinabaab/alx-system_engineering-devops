@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Gracefully reloads a gunicorn service
+
+PID=$(pgrep gunicorn | head -n 1)
+
+if [ -n "$PID" ]
+then
+	kill -HUP "$MPID"
+fi
